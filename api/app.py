@@ -5,6 +5,7 @@ from langchain_core.prompts import ChatPromptTemplate # Prompt template
 from langchain_community.llms import Ollama # Open souce llms
 from langchain.chat_models import ChatOpenAI # If I'm using Open AI models
 from langserve import add_routes # For adding all the add_routes
+from langchain_groq import ChatGroq # Importing the fastest AI Inference engine
 # Specific routes to interact with specific models (openai,llama,claude)
 import os
 import uvicorn
@@ -31,7 +32,12 @@ app = FastAPI(
 # Integrating with prompt template 
 
 # model = ChatOpenAI()
-llm = Ollama(model="llama2")
+# llm = Ollama(model="llama2")
+
+# Environment setup for groq
+
+os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
+groqApi = ChatGroq(model="llama3-70b-8192",temperature=0)
 
 # Defining the prompts for each models
 promptOne = ChatPromptTemplate.from_template("Write an essay about a {topic} with 200 words") # This is for OpenAI routes
@@ -43,11 +49,18 @@ promptTwo = ChatPromptTemplate.from_template("You are a consultation friend {top
 #     path="/essay" # Api url
 # )
 
+# add_routes(
+#     app,
+#     promptTwo|llm, # chain
+#     path="/story" # Api url(Endpoint)
+# )
+
 add_routes(
     app,
-    promptTwo|llm, # chain
+    promptTwo|groqApi, # chain
     path="/story" # Api url(Endpoint)
 )
+
 
 # Invoking the api server
 if __name__ == "__main__":

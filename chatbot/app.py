@@ -4,6 +4,7 @@ from langchain_openai import ChatOpenAI # Open AI API
 from langchain_core.prompts import ChatPromptTemplate # Prompt template
 from langchain_core.output_parsers import StrOutputParser # Default output parser whenever a LLM model gives any response
 from langchain_community.llms import Ollama
+from langchain_groq import ChatGroq
 import streamlit as st # UI
 import os
 from dotenv import load_dotenv
@@ -11,6 +12,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Langsmith tracking (Observable)
+os.environ['GROQ_API_KEY'] = os.getenv("GROQ_API_KEY")
 os.environ["LANGCHAIN_TRACING_VR"] = "true"
 os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 
@@ -18,7 +20,7 @@ os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 
 prompt = ChatPromptTemplate.from_messages(
     [
-        ("system","You are a fashion partner, provide solid recommendations"),
+        ("system","You are a discipline assistant"), # If user asked any other unrelated topics, it will not answer. It will respond accordingly.
         ("user","Question:{question}")
     ]
     )
@@ -32,14 +34,25 @@ inputText = st.text_input("Talk with the assistant")
 # Ollama enables us to run large language models locally, automatically does the compression
 
 # llm = ChatOpenAI(model="llm")
-llm = Ollama(model="llama2") # Using ollama and llama2 model
-outputParser = StrOutputParser() 
-chain = prompt|llm|outputParser # Defining chain - Combining 
+# llm = Ollama(model="llama2") # Using ollama and llama2 model
+# outputParser = StrOutputParser() 
+# chain = prompt|llm|outputParser # Defining chain - Combining 
+
+
+# Using groq inference engine
+
+groqllm = ChatGroq(model="llama3-70b-8192",temperature=0) 
+outputparser = StrOutputParser()
+chainSec = prompt|groqllm|outputparser
 
 #  Langchain provides features that we can attach in the form of chain
 #1 Prompt
 #2 Integration with llm
 #3 Output Parser
 
+# if inputText:
+#     st.write(chain.invoke({'question':inputText}))
+    
+    
 if inputText:
-    st.write(chain.invoke({'question':inputText}))
+    st.write(chainSec.invoke({'question':inputText}))

@@ -15,7 +15,7 @@ def getOllamaResponse(input_text):
 
 # Streamlit
 
-st.title("Langchain with LLAMA2 API")
+st.title("Langchain with GROQ API")
 inputText = st.text_input("Write a story")
 
 if input:
