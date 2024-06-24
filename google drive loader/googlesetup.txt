@@ -1,0 +1,10 @@
+1) Go to the Google Cloud Console.
+2) Create a new project or select an existing one.
+3) Navigate to the “APIs & Services” > “Credentials” section.
+4) Click on “Create credentials” and select “Service account” to create a new service account.
+5) Once the service account is created, click on it to view details.
+6) Under “Keys,” click on “Add key” and create a new JSON key.
+7) Check the type of OAuth 2.0 Client IDs you have created, for this visit the 3rd step.
+8) If it’s not set for a web application or installed application, create a new OAuth client ID with the correct type:
+9) For a web application, select “Web application” as the Application type.
+10) After creating the correct OAuth client ID, download the JSON file.
