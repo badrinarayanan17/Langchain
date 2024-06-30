@@ -50,7 +50,7 @@ prompt = ChatPromptTemplate.from_template(
     
     <context>
     {context}
-    <context>
+    <context/>
     
     Question:{input} 
     

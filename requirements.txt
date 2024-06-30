@@ -9,9 +9,17 @@ uvicorn
 sse_starlette
 bs4
 pypdf
-chromadb
-faiss-cpu
+chromadb # Vec db
+faiss-cpu # Vec db
 arxiv
 wikipedia
 google-api-python-client
-langchain_groq
+langchain_groq # Inference
+youtube-transcript-api # For making yt videos transcriptions
+# pytube
+# profanity-filter # For censoring prohibited words
+# Upcoming modules are required for unstructured pdf loader from langchain
+unstructured # For loading unstructured data
+pdfminer
+pillow_heif
+langchain_pinecone
