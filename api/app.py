@@ -39,6 +39,7 @@ app = FastAPI(
 os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 groqApi = ChatGroq(model="llama3-70b-8192",temperature=0)
 
+
 # Defining the prompts for each models
 promptOne = ChatPromptTemplate.from_template("Write an essay about a {topic} with 200 words") # This is for OpenAI routes
 promptTwo = ChatPromptTemplate.from_template("You are a consultation friend {topic}, give proper insights for the user queries") # This is for Ollama routes, calling llm models

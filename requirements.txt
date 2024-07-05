@@ -23,3 +23,6 @@ unstructured # For loading unstructured data
 pdfminer
 pillow_heif
 langchain_pinecone
+crewai # For building multi agent systems
+langchain_google_genai # For communicating with google
+crewai_tools

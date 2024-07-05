@@ -13,6 +13,7 @@ load_dotenv()
 
 # Langsmith tracking (Observable)
 os.environ['GROQ_API_KEY'] = os.getenv("GROQ_API_KEY")
+# os.environ['OPENAI_API_KEY'] = os.getenv("OPENAI_API_KEY")
 os.environ["LANGCHAIN_TRACING_VR"] = "true"
 os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 
@@ -20,7 +21,7 @@ os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 
 prompt = ChatPromptTemplate.from_messages(
     [
-        ("system","You are a discipline assistant"), # If user asked any other unrelated topics, it will not answer. It will respond accordingly.
+        ("system","You are a cricket assistant, if there are unrelated prompts don't answer it, provide info only about cricket"), # If user asked any other unrelated topics, it will not answer. It will respond accordingly.
         ("user","Question:{question}")
     ]
     )
@@ -30,7 +31,7 @@ prompt = ChatPromptTemplate.from_messages(
 st.title("Langchain with Ollama API")
 inputText = st.text_input("Talk with the assistant")
 
-# Not having the open AI API key, buy learning to create functionality
+# Not having the open AI API key, but learning to create functionality
 # Ollama enables us to run large language models locally, automatically does the compression
 
 # llm = ChatOpenAI(model="llm")
@@ -41,9 +42,10 @@ inputText = st.text_input("Talk with the assistant")
 
 # Using groq inference engine
 
-groqllm = ChatGroq(model="llama3-70b-8192",temperature=0) 
+# groqllm = ChatGroq(model="llama3-70b-8192",temperature=0) 
+groqApi = ChatGroq(model="gemma-7b-It",temperature=0)
 outputparser = StrOutputParser()
-chainSec = prompt|groqllm|outputparser
+chainSec = prompt|groqApi|outputparser
 
 #  Langchain provides features that we can attach in the form of chain
 #1 Prompt
