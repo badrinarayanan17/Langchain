@@ -24,6 +24,6 @@ writertask = Task(
     tools = [tool],
     agent = writer, # Defining agent
     async_execution = False,
-    output_file = 'article1.md' # Output file as markdown
+    output_file = 'article3.md' # Output file as markdown
     
 )

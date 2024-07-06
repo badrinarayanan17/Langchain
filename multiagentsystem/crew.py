@@ -12,5 +12,5 @@ crew = Crew(
 
 # Kicking off the crew
 
-outcome = crew.kickoff(inputs={'topic':'Neuromorphic Computing'})
+outcome = crew.kickoff(inputs={'topic':'WORLD WAR 2'})
 print(outcome)
