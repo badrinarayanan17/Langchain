@@ -19,8 +19,8 @@ col1, col2 = st.columns(2) # Creating 2 cols
 
 with col1: # Col1 can perform the below
     st.markdown("Struggling to find the right words for your emails? Whether you need to sound professional or keep it casual, our app is here to help! Using advanced language models, we transform your text into polished, well-phrased emails. Simply input your message, choose the tone—formal or informal—and let our app do the rest. Perfect for anyone looking to improve their communication skills effortlessly.")
-with col2: # Col2 can perform the below
-    st.image(image="tweet.png",width=450,caption="https://x.com/DannyRichman/status/1598254671591723008")
+# with col2: # Col2 can perform the below
+#     st.image(image="tweet.png",width=450,caption="https://x.com/DannyRichman/status/1598254671591723008")
 
 st.markdown("## Enter Your Email To Convert") 
 
