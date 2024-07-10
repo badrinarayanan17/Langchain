@@ -12,5 +12,5 @@ crew = Crew(
 
 # Kicking off the crew
 
-outcome = crew.kickoff(inputs={'topic':'WORLD WAR 2'})
+outcome = crew.kickoff(inputs={'topic':'Section 498A'})
 print(outcome)
