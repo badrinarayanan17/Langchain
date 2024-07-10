@@ -5,12 +5,12 @@ import streamlit as st
 from langchain.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
 from langchain_core.output_parsers import StrOutputParser
-from dotenv import load_dotenv
-import os
+# from dotenv import load_dotenv
+# import os
 
-load_dotenv()
+# load_dotenv()
 
-os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY") 
+# os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY") 
 
 st.set_page_config(page_title="Globalize Email",page_icon="💬") # Setting up some initial things
 st.header("Globalize Text",divider='rainbow')
