@@ -15,7 +15,7 @@ from langchain_core.output_parsers import StrOutputParser
 st.set_page_config(page_title="Globalize Email",page_icon="💬") # Setting up some initial things
 st.header("Globalize Text",divider='rainbow')
 
-col1, col2 = st.columns(2) # Creating 2 cols
+col1, col2 = st.columns(1) # Creating 2 cols
 
 with col1: # Col1 can perform the below
     st.markdown("Struggling to find the right words for your emails? Whether you need to sound professional or keep it casual, our app is here to help! Using advanced language models, we transform your text into polished, well-phrased emails. Simply input your message, choose the tone—formal or informal—and let our app do the rest. Perfect for anyone looking to improve their communication skills effortlessly.")
