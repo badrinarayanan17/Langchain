@@ -28,7 +28,7 @@ prompt = ChatPromptTemplate.from_messages(
 
 # UI
 
-st.title("Langchain with Ollama API")
+st.title("Langchain with GROQ Inference")
 inputText = st.text_input("Talk with the assistant")
 
 # Not having the open AI API key, but learning to create functionality

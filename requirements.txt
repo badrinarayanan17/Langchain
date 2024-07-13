@@ -27,3 +27,6 @@ crewai # For building multi agent systems
 langchain_google_genai # For communicating with google
 # crewai_tools
 chainlit
+streamlit_option_menu
+streamlit-authenticator==0.1.5 
+Flask

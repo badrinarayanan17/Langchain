@@ -5,6 +5,7 @@ import streamlit as st
 from langchain.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
 from langchain_core.output_parsers import StrOutputParser
+
 # from dotenv import load_dotenv
 # import os
 
@@ -20,8 +21,8 @@ col1, col2 = st.columns(2) # Creating 2 cols
 with col1: # Col1 can perform the below
     st.markdown("Struggling to find the right words for your emails? Whether you need to sound professional or keep it casual, our app is here to help! Using advanced language models, we transform your text into polished, well-phrased emails. Simply input your message, choose the tone—formal or informal—and let our app do the rest. Perfect for anyone looking to improve their communication skills effortlessly.")
     
-# with col2: # Col2 can perform the below
-#     st.image(caption="https://x.com/DannyRichman/status/1598254671591723008",width=450,image="tweet.png")
+with col2: # Col2 can perform the below
+    st.image(width=340,image="communicate.png")
 
 st.markdown("## Enter Your Email To Convert") 
 
@@ -42,15 +43,26 @@ st.write(email) # Reflecting the response
 
 st.markdown("## Your Converted Email") 
 
-if tone == "Formal" or dialect == "British" or dialect == "American": # Specifying the conditions
+if tone == "Formal" and dialect == "American": # Specifying the conditions
     prompts = ChatPromptTemplate.from_messages([
-        ("system","You are an email expert, turn the poor communication into formal tone, use british or american dialect"),
+        ("system","You are an email expert, turn the poor communication into formal tone, use american dialect"),
+        ("user","Question:{question}")
+    ])
+elif tone == "Formal" and dialect == "British":
+       prompts = ChatPromptTemplate.from_messages([
+        ("system","You are an email expert, turn the poor communication into formal tone, use british dialect"),
         ("user","Question:{question}")
     ])
     
-elif tone == "Informal" or dialect == "American" or dialect == "British" : 
+if tone == "Informal" and dialect == "American":
     prompts = ChatPromptTemplate.from_messages([
-        ("system","You are an email expert, turn the poor communication into informal tone, use american or british dialect"),
+        ("system","You are an email expert, turn the poor communication into informal tone, use american dialect"),
+        ("user","Question:{question}")
+    ])
+    
+elif tone == "Informal" and dialect == "British":
+    prompts = ChatPromptTemplate.from_messages([
+        ("system","You are an email expert, turn the poor communication into informal tone, use british dialect"),
         ("user","Question:{question}")
     ])
 
