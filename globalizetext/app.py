@@ -5,6 +5,7 @@ import streamlit as st
 from langchain.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
 from langchain_core.output_parsers import StrOutputParser
+from PIL import Image
 
 # from dotenv import load_dotenv
 # import os
@@ -22,7 +23,15 @@ with col1: # Col1 can perform the below
     st.markdown("Struggling to find the right words for your emails? Whether you need to sound professional or keep it casual, our app is here to help! Using advanced language models, we transform your text into polished, well-phrased emails. Simply input your message, choose the tone—formal or informal—and let our app do the rest. Perfect for anyone looking to improve their communication skills effortlessly.")
     
 with col2: # Col2 can perform the below
-    st.image(width=340,image="communicate.png")
+    # st.image(width=340,image="communicate.png")
+    
+    image_path = "globalizetext\communicate.png"
+
+    try:
+        image = Image.open(image_path)
+        st.image(image, width=340)
+    except Exception as e:
+        st.error(f"Error loading image: {e}")
 
 st.markdown("## Enter Your Email To Convert") 
 
