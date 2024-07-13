@@ -25,8 +25,10 @@ with col1: # Col1 can perform the below
 with col2: # Col2 can perform the below
     # st.image(width=340,image="communicate.png")
     
+    # Specifying the image path
+    
     image_path = "globalizetext/communicate.png"
-
+    
     try:
         image = Image.open(image_path)
         st.image(image, width=340)
