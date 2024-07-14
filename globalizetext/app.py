@@ -17,6 +17,21 @@ from PIL import Image
 st.set_page_config(page_title="Globalize Email",page_icon="💬") # Setting up some initial things
 st.header("Globalize Text",divider='rainbow')
 
+# Styling
+
+# bg = """
+# <style>
+#     [data-testid="stApp"]{
+#         background-color: #eae1d0;
+#     }
+#     [data-testid="stHeader"]{
+#          background-color: #eae1d0;
+#     }
+# </style>
+# """
+
+# st.markdown(bg,unsafe_allow_html=True)
+
 col1, col2 = st.columns(2) # Creating 2 cols
 
 with col1: # Col1 can perform the below
