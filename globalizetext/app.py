@@ -42,7 +42,7 @@ with col2: # Col2 can perform the below
     
     # Specifying the image path
     
-    image_path = "globalizetext\communicate.png"
+    image_path = "globalizetext/communicate.png"
     
     try:
         image = Image.open(image_path)
