@@ -21,15 +21,15 @@ os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 
 prompt = ChatPromptTemplate.from_messages(
     [
-        ("system","You are a cricket assistant, if there are unrelated prompts don't answer it, provide info only about cricket"), # If user asked any other unrelated topics, it will not answer. It will respond accordingly.
+        ("system","Act as a cooking chef"), # If user asked any other unrelated topics, it will not answer. It will respond accordingly.
         ("user","Question:{question}")
     ]
     )
 
 # UI
 
-st.title("Langchain with GROQ Inference")
-inputText = st.text_input("Talk with the assistant")
+st.title("Talk with the chef 👨‍🍳")
+inputText = st.text_input("Ask delicious recipe's")
 
 # Not having the open AI API key, but learning to create functionality
 # Ollama enables us to run large language models locally, automatically does the compression

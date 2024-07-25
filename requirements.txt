@@ -30,3 +30,4 @@ chainlit
 streamlit_option_menu
 streamlit-authenticator==0.1.5 
 Flask
+numexpr
