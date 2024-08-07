@@ -25,9 +25,7 @@ researcher = Agent(
     memory=True,
     llm=llm,
     backstory=(
-        "Driven by curiosity, you're at the forefront of"
-        "innovation, eager to explore and share knowledge that could change"
-        "the world."
+        "Driven by curiosity, you're at the forefront of innovation, eager to explore and share knowledge that could change the world."
     ),
     tools = [tool], # Google Serper Tool
     allow_delegation=True # This parameter allows the agent to collaborate with other agents
@@ -39,14 +37,10 @@ writer = Agent(
     role="Article Writer", # Defining role
     goal='Narrate compelling tech stories about {topic}', # Defining goal
     backstory=(
-        "With a flair for simplifying complex topics, you craft"
-    "engaging narratives that captivate and educate, bringing new"
-    "discoveries to light in an accessible manner."),  # Backstory
+        "With a flair for simplifying complex topics, you craft engaging narratives that captivate and educate, bringing new    discoveries to light in an accessible manner."),  # Backstory
     tools=[tool], # Calling the serper tool
     verbose=True,
     llm=llm,
     memory=True,
     allow_delegation=False # Not Required 
 )
-
-

@@ -16,7 +16,7 @@ def getOllamaResponse(input_text):
 # Streamlit
 
 st.title("Langchain with GROQ API")
-inputText = st.text_input("Write a story")
+inputText = st.text_input("Consult")
 
 if input:
     st.write(getOllamaResponse(inputText))

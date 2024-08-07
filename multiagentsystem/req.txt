@@ -1,0 +1,6 @@
+crewai # For MAS
+langchain_google_genai # For collaborating with google
+py-dotenv
+crewai_tools
+langchain_groq
+langchain==0.2.6

@@ -21,7 +21,7 @@ os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 
 prompt = ChatPromptTemplate.from_messages(
     [
-        ("system","Act as a cooking chef"), # If user asked any other unrelated topics, it will not answer. It will respond accordingly.
+        ("system","Act as a cricket analyst"), # If user asked any other unrelated topics, it will not answer. It will respond accordingly.
         ("user","Question:{question}")
     ]
     )
