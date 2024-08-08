@@ -12,5 +12,5 @@ crew = Crew(
 
 # Kicking off the crew
 
-outcome = crew.kickoff(inputs={'topic':'Sentiment Analysis in Finance'})
+outcome = crew.kickoff(inputs={'topic':'Current Scenario in Bangladesh'})
 print(outcome)
