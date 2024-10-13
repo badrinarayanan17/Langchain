@@ -6,7 +6,7 @@
 
 # Using Thompson Sampling Algorithm plus Agentic Approach to optimize the Advertising Strategies
 
-# LLM's are utilized for efficient data retrieval but here mock data is used
+# LLM's are utilized for efficient data retrieval but here mock data is utilized
 
 # Loading necessary libraries
 
