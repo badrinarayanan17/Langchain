@@ -116,8 +116,8 @@ crew = Crew(agents=[sentiment_agent, classification_agent, report_agent],
 
 # Fetch emails by date
 username = "sundharess@gmail.com"
-password = "jgobfatrsnrhrfwo"  # Replace with your app password
-date_to_fetch = datetime(2024, 7, 4)  # Replace with the desired date
+password = ""  
+date_to_fetch = datetime(2024, 7, 4)  
 
 emails = fetch_emails_by_date(username, password, date_to_fetch)
 print("Emails received on", date_to_fetch.strftime("%Y-%m-%d"))
