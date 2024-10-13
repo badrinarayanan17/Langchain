@@ -69,7 +69,6 @@ retriever = st.session_state.vectors.as_retriever()
 
 retrievalChain = create_retrieval_chain(documentChain,retriever)
 
-
 prompt = st.text_input("Give your queries on fastapi")
 
 if prompt:

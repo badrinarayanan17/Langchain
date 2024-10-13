@@ -21,7 +21,7 @@ os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 
 prompt = ChatPromptTemplate.from_messages(
     [
-        ("system","Act as a cricket analyst"), # If user asked any other unrelated topics, it will not answer. It will respond accordingly.
+        ("system","Act as a cooking chef"), # If user asked any other unrelated topics, it will not answer. It will respond accordingly.
         ("user","Question:{question}")
     ]
     )
@@ -29,7 +29,7 @@ prompt = ChatPromptTemplate.from_messages(
 # UI
 
 st.title("Talk with the chef 👨‍🍳")
-inputText = st.text_input("Ask delicious recipe's")
+inputText = st.text_input("Ask questions about planets")
 
 # Not having the open AI API key, but learning to create functionality
 # Ollama enables us to run large language models locally, automatically does the compression
@@ -39,11 +39,10 @@ inputText = st.text_input("Ask delicious recipe's")
 # outputParser = StrOutputParser() 
 # chain = prompt|llm|outputParser # Defining chain - Combining 
 
-
 # Using groq inference engine
 
 # groqllm = ChatGroq(model="llama3-70b-8192",temperature=0) 
-groqApi = ChatGroq(model="gemma-7b-It",temperature=0)
+groqApi = ChatGroq(model="gemma-7b-It",temperature=1)
 outputparser = StrOutputParser()
 chainSec = prompt|groqApi|outputparser
 
